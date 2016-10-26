@@ -1,0 +1,8 @@
+/**
+ * ng2-idle - A module for responding to idle users in Angular2 applications.
+ # @author Mike Grabski <me@mikegrabski.com> (http://mikegrabski.com/)
+ * @version v1.0.0-alpha.16
+ * @link https://github.com/HackedByChinese/ng2-idle.git#readme
+ * @license MIT
+ */
+{"version":3,"sources":["mocks/mockinterruptsource.ts"],"names":[],"mappings":"OAAO,EAAC,aAAa,EAAC,MAAM,kBAAkB;OACvC,EAAC,eAAe,EAAC,MAAM,oBAAoB;AAMlD,yCAAyC,eAAe;IACtD,YAAY,MAAmB,EAAE,MAAmB;QAClD,MAAM,MAAM,EAAE,MAAM,CAAC,CAAC;IACxB,CAAC;IAMD,OAAO,CAAC,SAAe;QACrB,IAAI,CAAC,WAAW,CAAC,IAAI,CAAC,IAAI,aAAa,CAAC,IAAI,EAAE,SAAS,CAAC,CAAC,CAAC;IAC5D,CAAC;AACH,CAAC;AAAA","file":"mockinterruptsource.js","sourcesContent":["import {InterruptArgs} from '../interruptargs';\nimport {InterruptSource} from '../interruptsource';\n\n\n/*\n * A simple InterruptSource for mocking during tests.\n */\nexport class MockInterruptSource extends InterruptSource {\n  constructor(attach?: () => void, detach?: () => void) {\n    super(attach, detach);\n  }\n\n  /*\n   * Simulates the external interrupt, triggering onInterrupt.\n   * @param innerArgs - The original event arguments or data, if any.\n   */\n  trigger(innerArgs?: any): void {\n    this.onInterrupt.emit(new InterruptArgs(this, innerArgs));\n  }\n}\n"]}

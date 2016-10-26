@@ -1,0 +1,8 @@
+/**
+ * ng2-idle - A module for responding to idle users in Angular2 applications.
+ # @author Mike Grabski <me@mikegrabski.com> (http://mikegrabski.com/)
+ * @version v1.0.0-alpha.16
+ * @link https://github.com/HackedByChinese/ng2-idle.git#readme
+ * @license MIT
+ */
+{"version":3,"sources":["mocks/mockkeepalivesvc.ts"],"names":[],"mappings":"OAAO,EAAC,YAAY,EAAC,MAAM,iBAAiB;AAE5C,sCAAsC,YAAY;IAAlD;QAAsC,eAAY;QAChD,cAAS,GAAY,KAAK,CAAC;IAa7B,CAAC;IAXC,KAAK;QACH,IAAI,CAAC,SAAS,GAAG,IAAI,CAAC;IACxB,CAAC;IAED,IAAI;QACF,IAAI,CAAC,SAAS,GAAG,KAAK,CAAC;IACzB,CAAC;IAED,IAAI;IAEJ,CAAC;AACH,CAAC;AAAA","file":"mockkeepalivesvc.js","sourcesContent":["import {KeepaliveSvc} from '../keepalivesvc';\n\nexport class MockKeepaliveSvc extends KeepaliveSvc {\n  isRunning: boolean = false;\n\n  start(): void {\n    this.isRunning = true;\n  }\n\n  stop(): void {\n    this.isRunning = false;\n  }\n\n  ping(): void {\n    // do nothing\n  }\n}\n"]}
